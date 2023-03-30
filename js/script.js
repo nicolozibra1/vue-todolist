@@ -19,7 +19,8 @@ createApp({
                 },
             ],
         newIngredient: '',
-            completed: false
+        completed: '',
+            
 
         }
     },
@@ -35,8 +36,10 @@ createApp({
         deleteList(index){
             this.listaSpesa.splice(index, 1)
         },
-        complete() {
-            this.listaSpesa[index].completed = true;
+        complete(index) {
+            this.listaSpesa[index].completed = true;   
+            console.log(index);
+            console.log(this.listaSpesa[index].completed);       
         }
     },
     mounted() {

@@ -1,0 +1,18 @@
+:root{
+    --dark-green: #132a13ff;
+    --hunter-green: #31572cff;
+    --fern-green: #4f772dff;
+    --moss-green: #90a955ff;
+    --mindaro: #ecf39eff;
+}
+
+body{
+    background-color: var(--mindaro);
+}
+.container{
+    background-color: var(--fern-green);
+    border-radius: 10px;
+}
+.added{
+    text-decoration:line-through;
+}

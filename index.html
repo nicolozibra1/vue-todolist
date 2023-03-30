@@ -12,17 +12,17 @@
 <body>
 
     <div id="app">
-        <div class="container">
-            <div class="input-box">
+        <div class="container my-5 d-flex flex-column justify-content-center align-items-center">
+            <div class="input-box py-4 d-flex justify-content-center">
                 <input type="text" name="ingredient" id="ingredient" v-model ="newIngredient" @keyup.enter="newItem">
-                <button @click="newItem">Invia</button>
+                <button @click="newItem">Add</button>
             </div>
-            <ul v-if="listaSpesa.length > 0">
-                <li v-for="(ingredient, index) in listaSpesa" @click="complete(index)">
+            <ul v-if="listaSpesa.length > 0" class="list-unstyled">
+                <li v-for="(ingredient, index) in listaSpesa" class="text-white text-uppercase">
                     <div>
-                        <span>{{ingredient.name}}</span>
-                        <button @click="deleteList(index)" >Cancella</button>
-                        <button>Fatto</button>
+                        <span :class="{'added': listaSpesa[index].completed}">{{ingredient.name}}</span>
+                        <button @click="deleteList(index)" class="bg-transparent border-0"><span class="text-danger fs-4">&cross;</span></button>
+                        <button @click="complete(index)">Add to Cart</button>
                     </div>
                 </li>
             </ul>
@@ -33,5 +33,6 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/utility.js"></script>
     <script src="./js/script.js"></script>
+
 </body>
 </html>
