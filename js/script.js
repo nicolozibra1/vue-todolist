@@ -99,6 +99,7 @@ createApp({
             newIngredient: '',
             completed: '',
             cart: [],
+            totalPrice: null,
         }
     },
     methods: {
@@ -116,11 +117,15 @@ createApp({
             this.cart.splice(index, 1);
             const itemIndexFind = this.listaSpesa.findIndex(item => item.id === itemToRemove.id);
             this.listaSpesa[itemIndexFind].completed = false;
+            this.totalPrice = parseFloat(this.cart.reduce((total, item) => total + item.price, 0).toFixed(2));
+            console.log(this.totalPrice)
         },
         complete(index) {
             this.listaSpesa[index].completed = true;   
-            this.cart.push(this.listaSpesa[index]);  
-        }
+            this.cart.push(this.listaSpesa[index]);
+            this.totalPrice = parseFloat(this.cart.reduce((total, item) => total + item.price, 0).toFixed(2));
+            console.log(this.totalPrice)
+        },
     },
     mounted() {
 
