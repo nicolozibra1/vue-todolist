@@ -24,7 +24,7 @@
         <div class="container my-5 d-flex flex-column justify-content-center align-items-center">   
             <h3>Most popular</h3>
             <div class="row" v-if="listaSpesa.length > 0">
-                <div class="col-sm-12 col-lg-2 d-flex flex-wrap g-4" v-for="(ingredient, index) in listaSpesa" >
+                <div class="col-sm-12 col-lg-2 d-flex flex-wrap g-4" v-for="(ingredient, index) in listaSpesa">
                     <div class="card w-100">
                         <div class="card-image p-2">
                             <img :src="listaSpesa[index].image" :alt="listaSpesa.name" class="w-100">
@@ -35,21 +35,10 @@
                                 <button @click="complete(index)" class="add2cart" :class="{'d-none': listaSpesa[index].completed}"><i class="fa-solid fa-cart-shopping text-white"></i></button>
                                 <span class="text-opacity-50" v-if="listaSpesa[index].completed">Added</span>
                               </div>
-                        </div>
-                        
+                        </div>    
                     </div>
                 </div>
             </div>
-            <!-- <ul v-if="listaSpesa.length > 0" class="list-unstyled">
-                <li v-for="(ingredient, index) in listaSpesa" class="text-white text-uppercase">
-                    <div>
-                        <span :class="{'added': listaSpesa[index].completed}">{{ingredient.name}}</span>
-                        <button @click="complete(index)">Add to Cart</button>
-                    </div>
-                </li>
-            </ul>
-            <h3 v-else>La lista della spesa è vuota</h3>
-        </div> -->
 
         <div id="your-cart" class="container my-5 d-flex flex-column justify-content-center align-items-center">
             <div class="row w-100">

@@ -11,60 +11,82 @@ createApp({
     data() {
         return {
             listaSpesa:[
-                {name: 'bread',
-                image: './img/bread.jpg',
-                completed: false
+                {
+                    id:1,
+                    name: 'bread',
+                    image: './img/bread.jpg',
+                    completed: false,
                 },
-                {name: 'milk',
-                image: './img/milk.jpg',
-                completed: false
+                {
+                    id:2,
+                    name: 'milk',
+                    image: './img/milk.jpg',
+                    completed: false
                 },
-                {name: 'egg',
-                image: './img/egg.jpg',
-                completed: false
+                {
+                    id:3,
+                    name: 'egg',
+                    image: './img/egg.jpg',
+                    completed: false
                 },
-                {name: 'hamburger',
-                image: './img/hamburger.jpg',
-                completed: false
+                {
+                    id:4,
+                    name: 'hamburger',
+                    image: './img/hamburger.jpg',
+                    completed: false
                 },
-                {name: 'apple',
-                image: './img/apple.jpg',
-                completed: false
+                {
+                    id:5,
+                    name: 'apple',
+                    image: './img/apple.jpg',
+                    completed: false
                 },
-                {name: 'lettuce iceberg',
-                image: './img/lattuce.jpg',
-                completed: false
+                {
+                    id:6,
+                    name: 'lettuce iceberg',
+                    image: './img/lattuce.jpg',
+                    completed: false
                 },
-                {name: 'rice',
-                image: './img/rice.jpg',
-                completed: false
+                {
+                    id:7,
+                    name: 'rice',
+                    image: './img/rice.jpg',
+                    completed: false
                 },
-                {name: 'pasta',
-                image: './img/pasta.jpg',
-                completed: false
+                {
+                    id:8,
+                    name: 'pasta',
+                    image: './img/pasta.jpg',
+                    completed: false
                 },
-                {name: 'cheese',
-                image: './img/cheese.jpg',
-                completed: false
+                {
+                    id:9,
+                    name: 'cheese',
+                    image: './img/cheese.jpg',
+                    completed: false
                 },
-                {name: 'yogurt',
-                image: './img/yogurt.jpg',
-                completed: false
+                {
+                    id:10,
+                    name: 'yogurt',
+                    image: './img/yogurt.jpg',
+                    completed: false
                 },
-                {name: 'seed oil',
-                image: './img/seed-oil.jpg',
-                completed: false
+                {
+                    id:11,
+                    name: 'seed oil',
+                    image: './img/seed-oil.jpg',
+                    completed: false
                 },
-                {name: 'mais',
-                image: './img/mais.jpg',
-                completed: false
+                {
+                    id:12,
+                    name: 'mais',
+                    image: './img/mais.jpg',
+                    completed: false
                 }
             ],
             newIngredient: '',
             completed: '',
-            cart: []
-            
-
+            cart: [],
         }
     },
     methods: {
@@ -77,15 +99,14 @@ createApp({
             this.newIngredient.name
         },
         deleteList(index){
-            this.cart.splice(index, 1)
-            this.listaSpesa[index].completed = false;
+            const itemToRemove = this.cart[index];
+            this.cart.splice(index, 1);
+            const itemIndexFind = this.listaSpesa.findIndex(item => item.id === itemToRemove.id);
+            this.listaSpesa[itemIndexFind].completed = false;
         },
         complete(index) {
             this.listaSpesa[index].completed = true;   
-            this.cart.push(this.listaSpesa[index]);
-            console.log(this.cart);
-            console.log(index);
-            console.log(this.listaSpesa[index].completed);       
+            this.cart.push(this.listaSpesa[index]);  
         }
     },
     mounted() {
