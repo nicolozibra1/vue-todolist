@@ -97,6 +97,7 @@ createApp({
             }
             this.cart.push(newIngredient)
             this.newIngredient.name
+            this.newIngredient = '';
         },
         deleteList(index){
             const itemToRemove = this.cart[index];
