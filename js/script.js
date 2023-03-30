@@ -18,8 +18,9 @@ createApp({
                 completed: false
                 },
             ],
-        newIngredient: '',
-        completed: '',
+            newIngredient: '',
+            completed: '',
+            cart: []
             
 
         }
@@ -34,10 +35,13 @@ createApp({
             this.newIngredient.name
         },
         deleteList(index){
-            this.listaSpesa.splice(index, 1)
+            this.cart.splice(index, 1)
+            this.listaSpesa[index].completed = false;
         },
         complete(index) {
             this.listaSpesa[index].completed = true;   
+            this.cart.push(this.listaSpesa[index]);
+            console.log(this.cart);
             console.log(index);
             console.log(this.listaSpesa[index].completed);       
         }

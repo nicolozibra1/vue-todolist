@@ -21,8 +21,19 @@
                 <li v-for="(ingredient, index) in listaSpesa" class="text-white text-uppercase">
                     <div>
                         <span :class="{'added': listaSpesa[index].completed}">{{ingredient.name}}</span>
-                        <button @click="deleteList(index)" class="bg-transparent border-0"><span class="text-danger fs-4">&cross;</span></button>
                         <button @click="complete(index)">Add to Cart</button>
+                    </div>
+                </li>
+            </ul>
+            <h3 v-else>La lista della spesa è vuota</h3>
+        </div>
+
+        <div class="container my-5 d-flex flex-column justify-content-center align-items-center">
+            <ul v-if="cart.length > 0" class="list-unstyled">
+                <li v-for="(cart, index) in cart" class="text-white text-uppercase">
+                    <div>
+                        <span>{{cart.name}}</span>
+                        <button @click="deleteList(index)" class="bg-transparent border-0"><span class="text-danger fs-4">&cross;</span></button>
                     </div>
                 </li>
             </ul>
