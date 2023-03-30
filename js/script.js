@@ -73,7 +73,7 @@ createApp({
                 name: this.newIngredient,
                 completed: false
             }
-            this.listaSpesa.push(newIngredient)
+            this.cart.push(newIngredient)
             this.newIngredient.name
         },
         deleteList(index){
