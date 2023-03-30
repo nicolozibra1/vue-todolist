@@ -46,6 +46,10 @@ header{
 #your-cart .card-header h3{
     color: #FF9800;
 }
+.badge{
+    background-color: #FF9800;
+    padding: 5px;
+}
 .debug{
     border: 2px solid red;
 }

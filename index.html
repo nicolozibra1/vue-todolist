@@ -58,11 +58,10 @@
                             <h3 class="text-center">Your Cart</h3>
                         </div>
                         <div class="card-body">
-                            <ul v-if="cart.length > 0" class="list-unstyled">
-                                <li v-for="(cart, index) in cart" class="text-white text-uppercase">
+                            <ul v-if="cart.length > 0" class="list-unstyled d-flex flex-wrap">
+                                <li v-for="(cart, index) in cart" class="text-uppercase ms-2">
                                     <div>
-                                        <span>{{cart.name}}</span>
-                                        <button @click="deleteList(index)" class="bg-transparent border-0"><span class="text-danger fs-4">&cross;</span></button>
+                                        <span class="badge text-black">{{cart.name}}<button @click="deleteList(index)" class="bg-transparent border-0"><span class="text-danger fs-5 d-flex align-content-center">x</span></button></span>   
                                     </div>
                                 </li>
                             </ul>
