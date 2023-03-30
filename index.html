@@ -31,7 +31,8 @@
                         </div>
                         <div class="card-body d-flex flex-column p-2">
                             <span :class="{'added': listaSpesa[index].completed}" class="fw-semibold text-uppercase">{{ingredient.name}}</span>
-                            <div class="d-flex justify-content-end align-items-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span :class="{'added': listaSpesa[index].completed}">{{ingredient.price}}&euro;</span>
                                 <button @click="complete(index)" class="add2cart" :class="{'d-none': listaSpesa[index].completed}"><i class="fa-solid fa-cart-shopping text-white"></i></button>
                                 <span class="text-opacity-50" v-if="listaSpesa[index].completed">Added</span>
                               </div>
