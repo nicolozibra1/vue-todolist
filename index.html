@@ -17,7 +17,24 @@
                 <input type="text" name="ingredient" id="ingredient" v-model ="newIngredient" @keyup.enter="newItem">
                 <button @click="newItem">Add</button>
             </div>
-            <ul v-if="listaSpesa.length > 0" class="list-unstyled">
+            <h3>Most popular</h3>
+            <div class="row" v-if="listaSpesa.length > 0">
+                <div class="col-sm-12 col-lg-2 d-flex flex-wrap g-4" v-for="(ingredient, index) in listaSpesa" >
+                    <div class="card w-100">
+                        <div class="card-image p-2">
+                            <img :src="listaSpesa[index].image" :alt="listaSpesa.name" class="w-100">
+                        </div>
+                        <div class="card-body d-flex flex-column p-2">
+                            <span :class="{'added': listaSpesa[index].completed}">{{ingredient.name}}</span>
+                            <div class="d-flex justify-content-end align-items-center">
+                                <button @click="complete(index)" class="add2cart"><i class="fa-solid fa-cart-shopping text-white"></i></button>
+                              </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- <ul v-if="listaSpesa.length > 0" class="list-unstyled">
                 <li v-for="(ingredient, index) in listaSpesa" class="text-white text-uppercase">
                     <div>
                         <span :class="{'added': listaSpesa[index].completed}">{{ingredient.name}}</span>
@@ -26,7 +43,7 @@
                 </li>
             </ul>
             <h3 v-else>La lista della spesa è vuota</h3>
-        </div>
+        </div> -->
 
         <div class="container my-5 d-flex flex-column justify-content-center align-items-center">
             <ul v-if="cart.length > 0" class="list-unstyled">

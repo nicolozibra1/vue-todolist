@@ -7,12 +7,15 @@
 }
 
 body{
-    background-color: var(--mindaro);
-}
-.container{
-    background-color: var(--fern-green);
-    border-radius: 10px;
+    background-color: #F4F2F0;
 }
 .added{
     text-decoration:line-through;
+}
+.add2cart{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: #FF9800;
+    border: transparent;
 }

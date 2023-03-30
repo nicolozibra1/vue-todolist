@@ -11,12 +11,54 @@ createApp({
     data() {
         return {
             listaSpesa:[
-                {name: 'pane',
+                {name: 'bread',
+                image: './img/bread.jpg',
                 completed: false
                 },
-                {name: 'acqua',
+                {name: 'milk',
+                image: './img/milk.jpg',
                 completed: false
                 },
+                {name: 'egg',
+                image: './img/egg.jpg',
+                completed: false
+                },
+                {name: 'hamburger',
+                image: './img/hamburger.jpg',
+                completed: false
+                },
+                {name: 'apple',
+                image: './img/apple.jpg',
+                completed: false
+                },
+                {name: 'lettuce iceberg',
+                image: './img/lattuce.jpg',
+                completed: false
+                },
+                {name: 'rice',
+                image: './img/rice.jpg',
+                completed: false
+                },
+                {name: 'pasta',
+                image: './img/pasta.jpg',
+                completed: false
+                },
+                {name: 'cheese',
+                image: './img/cheese.jpg',
+                completed: false
+                },
+                {name: 'yogurt',
+                image: './img/yogurt.jpg',
+                completed: false
+                },
+                {name: 'seed oil',
+                image: './img/seed-oil.jpg',
+                completed: false
+                },
+                {name: 'mais',
+                image: './img/mais.jpg',
+                completed: false
+                }
             ],
             newIngredient: '',
             completed: '',
