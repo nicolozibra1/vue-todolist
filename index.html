@@ -12,11 +12,16 @@
 <body>
 
     <div id="app">
-        <div class="container my-5 d-flex flex-column justify-content-center align-items-center">
-            <div class="input-box py-4 d-flex justify-content-center">
-                <input type="text" name="ingredient" id="ingredient" v-model ="newIngredient" @keyup.enter="newItem">
-                <button @click="newItem">Add</button>
+        <header class="d-flex justify-content-center align-items-center">
+            <div class="box-logo d-flex justify-content-center align-items-center p-3">
+                <img class="w-100" src="./img/logo-market.png" alt="">
             </div>
+            <div class="input-box d-flex justify-content-center w-50">
+                <input class="w-100" type="text" name="ingredient" id="ingredient" v-model ="newIngredient" @keyup.enter="newItem" placeholder="Add an ingredient manually (example: 'pineapple')">
+                <button id="add-manual" @click="newItem">Add</button>
+            </div>
+        </header>
+        <div class="container my-5 d-flex flex-column justify-content-center align-items-center">   
             <h3>Most popular</h3>
             <div class="row" v-if="listaSpesa.length > 0">
                 <div class="col-sm-12 col-lg-2 d-flex flex-wrap g-4" v-for="(ingredient, index) in listaSpesa" >
@@ -25,7 +30,7 @@
                             <img :src="listaSpesa[index].image" :alt="listaSpesa.name" class="w-100">
                         </div>
                         <div class="card-body d-flex flex-column p-2">
-                            <span :class="{'added': listaSpesa[index].completed}">{{ingredient.name}}</span>
+                            <span :class="{'added': listaSpesa[index].completed}" class="fw-semibold text-uppercase">{{ingredient.name}}</span>
                             <div class="d-flex justify-content-end align-items-center">
                                 <button @click="complete(index)" class="add2cart"><i class="fa-solid fa-cart-shopping text-white"></i></button>
                               </div>
